@@ -1,4 +1,2 @@
 # Hello-World
-Just a New Repository
-
-excited!
+You son of a bitch, I'm in.
