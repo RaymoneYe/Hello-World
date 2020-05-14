@@ -1,0 +1,22 @@
+class Solution:
+    def largestRectangleArea(self, heights: List[int]) -> int:
+        # 朴素思想-->每个高度向左向右能达到的最大宽度-->超时
+        heights = [0]+ heights+ [0]    # 数据预处理，防止左右指针越界
+        s = 0
+        for i in range(1,len(heights)-1):
+            left = i
+            right = i
+            high = heights[i]
+            while left>0:
+                if heights[left-1]>=high:
+                    left = left -1
+                else:
+                    break
+            while right<len(heights)-1:
+                if heights[right+1]>=high:
+                    right = right +1
+                else:
+                    break
+            s = max(s, high*(right-left+1))
+        return s
+
